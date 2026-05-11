@@ -22,9 +22,6 @@ def detect_round_objectsC(input_path, output_path):
     gray = clahe.apply(gray)
     blurred = cv2.GaussianBlur(gray, (9, 9), 2)
 
-    # -----------------------------------
-    # Detect circles
-    # -----------------------------------
     circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, dp=dp, minDist=min_dist, param1=param1, 
                                 param2=param2, minRadius=min_radius, maxRadius=max_radius)
 
